@@ -22,18 +22,20 @@
   </gazebo>
 
   <gazebo>
-    <plugin name="gps_controller" filename="libhector_gazebo_ros_gps.so">
+    <plugin name="gps_controller" filename="libnorthstar_gazebo_ros_gps.so">
       <updateRate>40</updateRate>
       <robotNamespace>/</robotNamespace>
       <bodyName>navsat_link</bodyName>
       <frameId>base_link</frameId>
       <topicName>/navsat/fix</topicName>
       <velocityTopicName>/navsat/vel</velocityTopicName>
-      <referenceLatitude>49.9</referenceLatitude>
-      <referenceLongitude>8.9</referenceLongitude>
+      <!-- Here we set the initial GPS location (Nordborg, DN)  default is in hamburg, germany-->
+      <referenceLatitude>55.029962</referenceLatitude>
+      <referenceLongitude>9.818575</referenceLongitude>
       <referenceHeading>0</referenceHeading>
       <referenceAltitude>0</referenceAltitude>
-      <drift>0.0001 0.0001 0.0001</drift>
+      <drift>0.0 0.0 0.0</drift>
+      <gaussianNoise>0.04 0.04 0.1</gaussianNoise>
     </plugin>
   </gazebo>
 
